@@ -1,0 +1,17 @@
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\bin\Debug\net6.0\SecurityQuestionsApp.Persistence.deps.json
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\bin\Debug\net6.0\SecurityQuestionsApp.Persistence.dll
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\bin\Debug\net6.0\SecurityQuestionsApp.Persistence.pdb
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\bin\Debug\net6.0\SecurityQuestionsApp.Models.dll
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\bin\Debug\net6.0\SecurityQuestionsApp.Models.pdb
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.csproj.AssemblyReference.cache
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.AssemblyInfoInputs.cache
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.AssemblyInfo.cs
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.csproj.CopyComplete
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.dll
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\refint\SecurityQuestionsApp.Persistence.dll
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.pdb
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\ref\SecurityQuestionsApp.Persistence.dll
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\bin\Debug\net6.0\SecurityQuestionsApp.Persistence.runtimeconfig.json
+C:\Users\jonathangrimm\source\repos\SecurityQuestionsApp\SecurityQuestionsApp.Persistence\obj\Debug\net6.0\SecurityQuestionsApp.Persistence.genruntimeconfig.cache
