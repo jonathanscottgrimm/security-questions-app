@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityQuestionsApp", "Sec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityQuestionsApp.Persistence", "SecurityQuestionsApp.Persistence\SecurityQuestionsApp.Persistence.csproj", "{696EE98B-202A-4779-B32C-D98764350CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityQuestionsApp.Tests", "SecurityQuestionsApp.Tests\SecurityQuestionsApp.Tests.csproj", "{19EEB567-ED35-44F6-82D4-3F312C858377}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityQuestionsApp.Models", "SecurityQuestionsApp.Models\SecurityQuestionsApp.Models.csproj", "{5A96E8BE-2E0A-48FF-A474-6F256717017A}"
 EndProject
 Global
