@@ -28,7 +28,6 @@ namespace SecurityQuestionsApp
             _outputWriter.WriteLine("Hi, what is your name?");
             var name = _inputReader.ReadLine();
 
-
             var person = await _repo.GetPersonByNameAsync(name);
 
             if (person == null)
@@ -66,6 +65,7 @@ namespace SecurityQuestionsApp
             if (storeAnswer.Equals("yes") || storeAnswer.Equals("y"))
             {
                 var questions = await _repo.GetQuestionsAsync();
+                
                 //randomize order of questions
                 questions = questions.OrderBy(q => Guid.NewGuid()).ToList();
 
@@ -74,6 +74,7 @@ namespace SecurityQuestionsApp
                 {
                     if (answeredQuestions == 3)
                         break;
+
 
                     _outputWriter.WriteLine(question.Question);
                     var answer = _inputReader.ReadLine().ToLowerInvariant();
@@ -104,7 +105,7 @@ namespace SecurityQuestionsApp
                 }
 
                 questions = ResetIsAsked(questions);
-
+                
                 await NameFlowAsync();
             }
         }
@@ -152,4 +153,3 @@ namespace SecurityQuestionsApp
         }
     }
 }
-
