@@ -17,19 +17,17 @@ namespace SecurityQuestionsApp
             _repo = repo;
         }
 
-        public async Task RunAsync()
-        {
-            await NameFlowAsync();
-        }
-
+        public async Task RunAsync() => await NameFlowAsync();
+        
         private async Task NameFlowAsync()
         {
-
             _outputWriter.WriteLine("Hi, what is your name?");
             var name = _inputReader.ReadLine();
 
-            var person = await _repo.GetPersonByNameAsync(name);
+            if (string.IsNullOrWhiteSpace(name))
+                await NameFlowAsync();         
 
+            var person = await _repo.GetPersonByNameAsync(name);
             if (person == null)
             {
                 person = new Person { Name = name };
@@ -54,7 +52,7 @@ namespace SecurityQuestionsApp
         {
             _outputWriter.WriteLine("Would you like to store answers to security questions? (Y/N)");
             var storeAnswer = _inputReader.ReadLine().ToLowerInvariant();
-            if (storeAnswer.Equals("n") || storeAnswer.Equals("no"))
+            if (string.IsNullOrWhiteSpace(storeAnswer) || storeAnswer.Equals("n") || storeAnswer.Equals("no"))
             {
                 await NameFlowAsync();
                 return;
@@ -65,7 +63,7 @@ namespace SecurityQuestionsApp
             if (storeAnswer.Equals("yes") || storeAnswer.Equals("y"))
             {
                 var questions = await _repo.GetQuestionsAsync();
-                
+
                 //randomize order of questions
                 questions = questions.OrderBy(q => Guid.NewGuid()).ToList();
 
@@ -74,7 +72,6 @@ namespace SecurityQuestionsApp
                 {
                     if (answeredQuestions == 3)
                         break;
-
 
                     _outputWriter.WriteLine(question.Question);
                     var answer = _inputReader.ReadLine().ToLowerInvariant();
@@ -95,21 +92,23 @@ namespace SecurityQuestionsApp
                     answeredQuestions++;
                 }
 
-                if (person.SecurityAnswers.Any())
-                    person.SecurityAnswers.Clear();
-
                 if (answeredQuestions.Equals(3))
                 {
+                    // remove old answers for user
+                    if (person.SecurityAnswers.Any())
+                        person.SecurityAnswers.Clear();
+
+                    //add the new ones
                     person.SecurityAnswers.AddRange(newSecurityAnswers);
                     await _repo.InsertOrUpdatePersonAsync(person);
                 }
 
+                //reset unmapped property used foreach looping tracking
                 questions = ResetIsAsked(questions);
-                
+
                 await NameFlowAsync();
             }
         }
-
         private async Task AnswerFlowAsync(Person person)
         {
             //randomize question order
@@ -117,6 +116,12 @@ namespace SecurityQuestionsApp
 
             foreach (var question in securityQuestionsAndAnswers.Where(s => !s.IsAsked))
             {
+                if (!securityQuestionsAndAnswers.Any())
+                {
+                    _outputWriter.WriteLine("You have run out of questions to answer.");
+                    break;
+                }
+
                 _outputWriter.WriteLine(question.SecurityQuestion.Question);
                 question.IsAsked = true;
                 var answer = _inputReader.ReadLine();
@@ -128,9 +133,7 @@ namespace SecurityQuestionsApp
                 }
             }
 
-            if (!securityQuestionsAndAnswers.Any())
-                _outputWriter.WriteLine("You have run out of questions to answer.");
-
+            //reset unmapped property used foreach looping tracking
             person.SecurityAnswers = ResetIsAsked(person.SecurityAnswers);
 
             await NameFlowAsync();
